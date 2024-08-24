@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess Number</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    .main {
+        background-color: purple;
+        width: 100%;
+        height: 100vh;
+    }
+
+    #header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    #header button {
+        padding: 10px 20px;
+        border: none;
+        background-color: white;
+        color: #000;
+        border-radius: 5px;
+
+    }
+
+    #header h2 {
+        color: #fff;
+
+    }
+
+    #heading {
+
+        text-align: center;
+        color: #fff;
+        margin-block: 40px;
+        font-size: 3rem;
+    }
+
+    #line-box {
+        width: 100%;
+
+
+        position: relative;
+        height: 100px;
+        display: flex;
+        align-items: center;
+
+    }
+
+    #line {
+        height: 10px;
+        width: 100%;
+        background-color: #ffffff;
+
+
+    }
+
+    #line-box .box {
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        background-color: purple;
+        font-size: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+
+
+    }
+
+    .gameSpace {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    #check,
+    #ScoreField {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        flex-direction: column;
+        gap: 20px;
+        color: #fff;
+    }
+
+    #guess {
+        width: 100px;
+        ;
+        height: 100px;
+        outline: none;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    #checkbtn {
+        padding: 10px 20px;
+        background: #f9ff3e;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+    }
+
+    #scores {
+        display: grid;
+        gap: 20px;
+        font-size: 1.4rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .gameSpace {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="main">
+        <div id="header">
+            <button id="agtin-btn">Play Again</button>
+            <h2>(Number between 1 to 20)</h2>
+        </div>
+        <h1 id="heading">Guess The Number</h1>
+
+        <div id="line-box">
+            <div class="box"></div>
+            <div id="line"></div>
+        </div>
+
+        <div class="gameSpace">
+            <div id="check">
+                <input type="number" id="guess">
+                <button id="checkbtn">Submit</button>
+
+            </div>
+            <div id="ScoreField">
+                <h1 id="congratsMsg">Start Guessing...</h1>
+
+                <div id="scores">
+                    <p>Score : <span id="score">0</span></p>
+                    <p>HighScore : <span id="highScore">0</span></p>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
